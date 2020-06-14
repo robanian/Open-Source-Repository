@@ -1,0 +1,50 @@
+// 마커가 표시될 위치입니다 
+		// 마커 개수 관광지만큼 이빠이 늘리기
+		var markerPosition = new kakao.maps.LatLng(33.450701, 126.570667);
+		
+		// 마커 생성 실험
+		var markerPosition1 = new kakao.maps.LatLng(35.450701, 128.570667);
+		
+		var markerPosition2 = new kakao.maps.LatLng(37.284311, 126.992371);
+
+		// 마커를 생성합니다
+		var marker = new kakao.maps.Marker({
+			position: markerPosition
+		});
+		var marker1 = new kakao.maps.Marker({
+			position: markerPosition1
+		});
+		var marker2 = new kakao.maps.Marker({
+			position: markerPosition2
+		});
+
+		// 마커가 지도 위에 표시되도록 설정합니다
+		marker.setMap(map);
+		// 마커가 지도 위에 정보 표시되게 설정
+		var iwContent = '<div style="padding:5px;">제주도 정보 <br><a href="https://map.kakao.com/link/map/Hello World!,33.450701,126.570667" style="color:blue" target="_blank">관광지정보더보기</a> <a href="https://map.kakao.com/link/to/Hello World!,33.450701,126.570667" style="color:blue" target="_blank">길찾기</a></div>', // 인포윈도우에 표출될 내용으로 HTML 문자열이나 document element가 가능합니다
+			iwPosition = new kakao.maps.LatLng(33.450701, 126.570667); //인포윈도우 표시 위치입니다
+		
+		// 마커표시 실험
+		marker1.setMap(map);
+		var iwContent1 = '<div style="padding:5px;">제주도 정보 <br><a href="https://map.kakao.com/link/map/Hello World!,33.450701,126.570667" style="color:blue" target="_blank">관광지정보더보기</a> <a href="https://map.kakao.com/link/to/Hello World!,33.450701,126.570667" style="color:blue" target="_blank">길찾기</a></div>', // 인포윈도우에 표출될 내용으로 HTML 문자열이나 document element가 가능합니다
+			iwPosition1 = new kakao.maps.LatLng(35.450701, 128.570667);
+		// 마커표시 실험
+		marker2.setMap(map);
+		var iwContent2 = '<div style="padding:5px;">제주도 정보 <br><a href="https://map.kakao.com/link/map/Hello World!,33.450701,126.570667" style="color:blue" target="_blank">관광지정보더보기</a> <a href="https://map.kakao.com/link/to/Hello World!,33.450701,126.570667" style="color:blue" target="_blank">길찾기</a></div>', // 인포윈도우에 표출될 내용으로 HTML 문자열이나 document element가 가능합니다
+			iwPosition2 = new kakao.maps.LatLng(37.284311, 126.992371);
+
+		// 인포윈도우를 생성합니다
+		var infowindow = new kakao.maps.InfoWindow({
+			position: iwPosition, content: iwContent
+		});
+		var infowindow1 = new kakao.maps.InfoWindow({
+			position: iwPosition1, content: iwContent1
+		});
+		var infowindow2 = new kakao.maps.InfoWindow({
+			position: iwPosition2, content: iwContent2
+		});
+
+		// 마커 위에 인포윈도우를 표시합니다. 두번째 파라미터인 marker를 넣어주지 않으면 지도 위에 표시됩니다
+		infowindow.open(map, marker); 
+		infowindow1.open(map, marker1);
+		infowindow2.open(map, marker2);
